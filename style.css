@@ -1,37 +1,48 @@
 /*
- * Basic styling for the personal website. The design is simple and modern,
- * focusing on readability and responsiveness. You can customize colors,
- * fonts, and layout to better reflect your personal brand.
+ * Professional editorial theme for the portfolio website.
  */
 
-/* Reset some default margins and paddings */
+:root {
+  --ink: #1d1a16;
+  --ink-muted: #5f594f;
+  --paper: #fbf8f2;
+  --panel: #fffdf9;
+  --line: #ddd3c4;
+  --accent: #8a2f2c;
+  --accent-soft: #efe4dc;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
 }
 
 /* Navigation bar */
 .navbar {
-  background-color: #2c3e50;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 248, 242, 0.95);
+  backdrop-filter: blur(5px);
 }
 
 .navbar ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  width: min(1040px, 92vw);
+  margin: 0 auto;
+  padding: 0.7rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
 }
 
 .navbar li {
@@ -40,154 +51,196 @@ body {
 
 .navbar a {
   display: block;
-  padding: 1rem 1.25rem;
-  color: #ffffff;
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--ink-muted);
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .navbar a:hover {
-  background-color: #3498db;
+  color: var(--ink);
+  background-color: #f1ebdf;
+  border-color: var(--line);
+}
+
+.navbar a[aria-current="page"] {
+  color: var(--ink);
+  background-color: var(--accent-soft);
+  border-color: #d7c1b2;
 }
 
 /* Hero section */
 .hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: #f5f7fa;
-  border-bottom: 1px solid #e6e6e6;
+  width: min(1040px, 92vw);
+  margin: 0 auto;
+  text-align: left;
+  padding: 4.25rem 0 2.5rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
+  margin: 0 0 0.45rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
 }
 
 .hero .tagline {
-  font-size: 1.25rem;
-  color: #555;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.25rem;
+  max-width: 56ch;
+  color: var(--ink-muted);
+  font-size: 1.16rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #3498db;
-  color: #ffffff;
+  padding: 0.62rem 1rem;
+  background-color: transparent;
+  color: var(--accent);
   text-decoration: none;
-  border-radius: 0.375rem;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+  font-weight: 700;
+  border: 1px solid #c8aa96;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #2980b9;
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
-/* General section styling */
+/* Main layout */
+main {
+  width: min(1040px, 92vw);
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
 .section {
-  padding: 2.5rem 2rem;
+  padding: 2.2rem 0 0;
 }
 
 .section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  display: inline-block;
-  padding-bottom: 0.25rem;
+  margin: 0 0 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.55rem, 3.8vw, 2.2rem);
+  color: var(--ink);
 }
 
 .section p {
-  max-width: 800px;
-  margin: 0 auto 1.5rem auto;
-  line-height: 1.7;
+  max-width: 70ch;
+  margin: 0 0 1rem;
+  color: var(--ink-muted);
+  font-size: 1.07rem;
 }
 
-/* Lists for education and skills */
+/* Lists for education and strengths */
 .timeline {
   list-style: none;
   padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.95rem;
 }
 
 .timeline li {
-  margin-bottom: 1.5rem;
-  padding-left: 0.5rem;
-  border-left: 2px solid #3498db;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.35rem;
+  background-color: var(--panel);
 }
 
 .timeline li strong {
   display: block;
-  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-size: 1.03rem;
 }
 
 .timeline li em {
   font-style: italic;
-  color: #666;
+  color: #70675a;
 }
 
-.skills-list, .social-links {
+.skills-list,
+.social-links {
   list-style: none;
   padding: 0;
+  margin: 1rem 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 0.55rem;
 }
 
-.skills-list li, .social-links li {
-  background-color: #f1f1f1;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.375rem;
+.skills-list li,
+.social-links li {
+  border: 1px solid var(--line);
+  background-color: var(--panel);
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
 }
 
+.skills-list a,
 .social-links a {
-  color: #3498db;
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
+.skills-list a:hover,
 .social-links a:hover {
   text-decoration: underline;
 }
 
-/* Experience and project items */
-.experience-item, .project-item {
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
+/* Experience and project cards */
+.experience-item,
+.project-item {
+  margin: 0 0 1.15rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--panel);
 }
 
-.experience-item h3, .project-item h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
+.experience-item h3,
+.project-item h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: var(--ink);
 }
 
 .experience-item .date {
   display: block;
   font-style: italic;
-  color: #777;
-  margin-bottom: 0.5rem;
+  color: #746b5e;
+  margin-bottom: 0.65rem;
 }
 
 .experience-item ul {
-  margin: 0.5rem 0 0 1.25rem;
+  margin: 0.5rem 0 0 1.05rem;
   padding: 0;
 }
 
 .experience-item li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
+  color: var(--ink-muted);
+}
+
+.project-item p {
+  margin-bottom: 0.75rem;
 }
 
 .project-link {
-  color: #3498db;
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .project-link:hover {
@@ -196,9 +249,54 @@ body {
 
 /* Footer */
 footer {
-  background-color: #2c3e50;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.875rem;
+  width: min(1040px, 92vw);
+  margin: 1.6rem auto 0;
+  padding: 1rem 0 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 0.94rem;
+  text-align: left;
+}
+
+/* Motion */
+@keyframes rise-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: rise-fade 0.5s ease both;
+}
+
+.section {
+  animation: rise-fade 0.55s ease both;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .navbar ul {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .section {
+    padding-top: 1.8rem;
+  }
 }
