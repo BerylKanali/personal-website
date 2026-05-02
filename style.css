@@ -175,6 +175,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.experience-item ul {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.experience-item li {
+  margin-bottom: 0.5rem;
+}
+
 .project-link {
   color: #3498db;
   text-decoration: none;
