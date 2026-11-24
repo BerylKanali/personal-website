@@ -234,6 +234,35 @@ body > header {
   margin-left: 0.5rem;
 }
 
+/* Homepage hero: text beside portrait */
+.hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+
+/* =========================
+   Portrait
+   ========================= */
+
+.hero-photo,
+.about-photo {
+  /* leave room for the offset shadow so it stays inside the page width */
+  margin: 0 14px 14px 0;
+}
+
+.hero-photo img,
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  box-shadow: 14px 14px 0 var(--accent-soft);
+}
+
 
 /* =========================
    Buttons & links
@@ -736,6 +765,17 @@ main {
    About
    ========================= */
 
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-photo {
+  margin-top: 0.5rem;
+}
+
 .section .background-line {
   line-height: 1.9;
 }
@@ -848,6 +888,15 @@ main {
   margin-bottom: 1.2rem;
 }
 
+.contact-cta .hero-actions {
+  margin-top: 0;
+}
+
+.section .cta-email {
+  margin: 1rem 0 0;
+  font-size: 0.98rem;
+}
+
 
 /* =========================
    Footer
@@ -946,6 +995,16 @@ footer p {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+
+  .hero-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 250px);
+    gap: 2.25rem;
+  }
+
+  .about-intro {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 2rem;
+  }
 }
 
 
@@ -1005,6 +1064,26 @@ footer p {
   .hero h1 {
     max-width: none;
     font-size: clamp(2.4rem, 13vw, 3.7rem);
+  }
+
+  /* Portrait moves above the text as a small round photo */
+  .hero-split,
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-photo,
+  .about-photo {
+    order: -1;
+    width: 136px;
+    margin: 0 6px 6px 0;
+  }
+
+  .hero-photo img,
+  .about-photo img {
+    border-radius: 50%;
+    box-shadow: 6px 6px 0 var(--accent-soft);
   }
 
   .hero-actions {
