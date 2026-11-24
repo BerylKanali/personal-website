@@ -34,7 +34,9 @@
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
+  </header>
 
+  <main id="main">
     <section class="hero">
       <p class="hero-intro">Open source &middot; Digital health &middot; Responsible innovation</p>
       <h1>Beryl Kanali</h1>
@@ -52,16 +54,13 @@
         <span>Astropy</span> <span>Bioconductor</span> <span>R Project</span>
       </p>
     </section>
-  </header>
-
-  <main id="main">
     <!-- Proof: keep these numbers current -->
     <section class="section" aria-label="Selected impact">
       <ul class="stats">
         <li><strong>500+</strong><span>contributors and partners in the global OpenMRS community I support</span></li>
         <li><strong>40+</strong><span>student innovation teams mentored from problem to pitch</span></li>
         <li><strong>86</strong><span>students took part in the 2026 KamiLimu Buildathon</span></li>
-        <li><strong>2</strong><span>peer-reviewed publications in computing education and machine learning</span></li>
+        <li><strong>5</strong><span>years building open-source communities, since my Outreachy internship with Bioconductor</span></li>
       </ul>
     </section>
 
@@ -93,21 +92,21 @@
       <p class="eyebrow">Selected work</p>
       <h2>Where this experience comes from</h2>
       <div class="case-grid">
-        <article class="case-card">
+        <a class="case-card card-link" href="work.html#openmrs">
           <p class="case-org">OpenMRS &middot; 2024 – present</p>
           <h3>Coordinating a global open-source digital health community</h3>
           <p>Community programmes, contributor pathways, Google Summer of Code, partner coordination and community events across 500+ contributors and implementers.</p>
-        </article>
-        <article class="case-card">
+        </a>
+        <a class="case-card card-link" href="work.html#hub">
           <p class="case-org">KamiLimu &middot; 2026 – present</p>
           <h3>Building a Responsible Innovation Hub</h3>
           <p>Designing the structure, programming and support model that helps student innovations move beyond prototypes toward real-world adoption.</p>
-        </article>
-        <article class="case-card">
+        </a>
+        <a class="case-card card-link" href="work.html#astropy">
           <p class="case-org">Astropy &middot; 2023 – 2024</p>
           <h3>Community engagement strategy for scientific Python</h3>
           <p>Engagement strategy, participation tracking and Code of Conduct review for a global open-source research software community.</p>
-        </article>
+        </a>
       </div>
       <a href="work.html" class="project-link">Read the case studies</a>
     </section>
@@ -135,12 +134,13 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Beryl Kanali &middot; Open source, digital health &amp; responsible innovation</p>
+    <p>&copy; <span class="year">2026</span> Beryl Kanali &middot; Open source, digital health &amp; responsible innovation</p>
     <p class="footer-links">
       <a href="mailto:kanaliberyl@gmail.com">Email</a>
       <a href="https://linkedin.com/in/berylkanali" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/BerylKanali" target="_blank" rel="noopener noreferrer">GitHub</a>
     </p>
   </footer>
+  <script>document.querySelectorAll(".year").forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>

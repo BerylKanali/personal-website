@@ -34,14 +34,13 @@
         <li><a href="contact.html" aria-current="page" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
+  </header>
 
+  <main id="main">
     <section class="hero hero-page">
       <h1>Let's work together</h1>
       <p class="tagline">Consulting, collaboration, speaking and research conversations.</p>
     </section>
-  </header>
-
-  <main id="main">
     <section class="section contact-layout">
       <div>
         <h2>Get in touch</h2>
@@ -87,12 +86,13 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Beryl Kanali &middot; Open source, digital health &amp; responsible innovation</p>
+    <p>&copy; <span class="year">2026</span> Beryl Kanali &middot; Open source, digital health &amp; responsible innovation</p>
     <p class="footer-links">
       <a href="mailto:kanaliberyl@gmail.com">Email</a>
       <a href="https://linkedin.com/in/berylkanali" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/BerylKanali" target="_blank" rel="noopener noreferrer">GitHub</a>
     </p>
   </footer>
+  <script>document.querySelectorAll(".year").forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>
